@@ -256,13 +256,12 @@ ul{
     grid-row: 2;
 }
 .Lang .photo {
-    width: 90px; 
+    width: 90px;
     height: 60px;
     object-fit: contain;
     border: none;
     display: block;
     border-radius: 10px;
-    border: 2px solid black;
 }
 .categoria:hover{
     transform: scale(1.1);
