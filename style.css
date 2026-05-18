@@ -45,6 +45,8 @@ a {
     border: 2px solid black;
 }
 .foto {
+    height: 60px;
+    width: 90px;
     border: 2px solid black;
     border-radius: 10px;
     margin: 0;
