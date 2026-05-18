@@ -1,0 +1,417 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+mark{
+    border-radius: 5px;
+    border: black 2px solid;
+    padding: 0px 5px;
+}
+@font-face {
+  font-family: 'Twemoji Country Flags';
+  /* Questo range indica al browser di attivare il font SOLO per le bandiere */
+  unicode-range: U+1F1E6-1F1FF, U+1F3F4, U+E0062-E0063, U+E0065, U+E0067, U+E006C, U+E006E, U+E0073-E0074, U+E0077, U+E007F;
+  src: url('https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill@0.1/dist/TwemojiCountryFlags.woff2') format('woff2');
+}
+body{
+    margin: 0px;
+    background: linear-gradient(90deg, green, white, red);
+    background-size: 300% 300%;
+    animation: gradient 10s ease infinite;
+    font-family: 'Segoe UI', 'Twemoji Country Flags', sans-serif;
+    -webkit-user-drag: none;
+}
+@keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+img,
+button,
+a {
+  -webkit-user-drag: none;
+}
+.contenitore{
+    min-height: 100vh;
+    height: auto;
+    width: 90%;
+    background-color: #d6f7c7;
+    float: none;
+    margin: auto;
+    border: 2px solid black;
+}
+.foto {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: stretch;
+    max-width: 80%;
+    position: relative;
+    overflow: hidden;
+}
+
+.foto .overlay,
+.melee .overlay {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-5px);
+  background: rgba(0,0,0,0.85);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.foto .overlay::after,
+.melee .overlay::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: rgba(0,0,0,0.85) transparent transparent transparent;
+}
+
+.foto:hover .overlay,
+.melee:hover .overlay {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.logoIMG{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    grid-row: 1 / span 3;
+}
+.header{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    align-items: start;
+    padding: 10px 15px;
+    width: 100%;
+    background-color: darkgreen;
+    color: white;
+    border-bottom: 2px solid black;
+}
+.titolo {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: center;
+}
+.logo{
+    width: 130px;
+    height: 130px;
+    background-color: white;
+    margin: 0;
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    justify-self: end;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.bottoniSezione{
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.bottoniSezione > a,
+.bottoniSezione > button {
+    flex: 1 1 120px;
+    min-width: 100px;
+}
+.bottoniSezione > a {
+    display: flex;
+}
+.bottoniSezione > a button {
+    width: 100%;
+}
+.categoria{
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.box {
+    min-height: 200px; 
+    height: auto; 
+    width: 90%;
+    margin: 20px auto;
+    background-color: #d8f7b8;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+    padding: 20px;
+}
+.foto{
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: stretch;
+    max-width: 80%;
+}
+.logo:hover {
+    transform: rotate(10deg) scale(1.1);
+    transition: 0.3s;
+}
+.melee {
+    position: relative;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0;
+    grid-column: 2;
+    height: auto; 
+    width: 80%;
+    grid-row: 1 / span 8;
+    align-self: center;
+        justify-self: center;
+}
+.melee:hover{
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+    box-shadow: 0px 0px 15px black;
+}
+.game{
+    height: 50px;
+    grid-column: 2;
+}
+.picture{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+.logoSocial{
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+}
+summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+summary::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  margin-right: 12px;
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+  transform: rotate(45deg);
+}
+
+details[open] summary::after {
+  transform: rotate(45deg);
+}
+.contatto{
+    width: 100%;
+    color: black;
+}
+.nome{
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+}
+ul{
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    grid-column: 1;
+    grid-row: 2;
+}
+.Lang .photo {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain;
+    border: none;
+    display: block;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.categoria:hover{
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+    background-color: #b8f79d;
+    box-shadow: 0px 0px 10px black;
+}
+.LangSegtion {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+.video{
+    grid-column: 1;
+    grid-row:5;
+    border: 2px solid black;
+    border-radius: 10px;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+#daysSinceTournament {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#daysSinceTournament:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+    box-shadow: 0px 0px 10px black;
+}
+.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.Lang{
+    flex: 1 1 0;
+    min-width: 70px;
+    max-width: 140px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    border-radius: 10px;
+    padding: 0;
+    background-color: forestgreen;
+    color: white;
+    border: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+.Lang:hover{
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+    /* box-shadow: 0px 0px 10px black; */
+}
+#current{
+    box-shadow: 0px 0px 10px lightyellow;
+    border-radius: 10px;
+}
+#current:hover{
+    box-shadow: 0px 0px 35px lightyellow;
+}
+li{
+    margin-top: 10px;
+    border-bottom: 2px dashed gray;
+    padding-top: 5px;
+    font-size: 16px;
+    text-align: left;
+    font-style: normal;
+    font-weight: normal;
+}
+ul{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+table{
+    border: 2px solid black;
+    padding: 5px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+td{
+    border: 1px solid black;
+    padding: 10px;
+}
+tr:hover{
+    background-color: #b8f79d;
+}
+p{
+    width: 100%;
+    margin: 5px;
+    grid-column: 1;
+    grid-row: auto;
+    text-align: justify;
+}
+.lista-bug{
+    font-weight: normal;
+    text-align: left;
+    margin-top: 0px;
+    grid-row: 5 / span 1;
+}
+details{
+    margin-top: 10px;
+    border-top: 2px dashed darkgreen;
+    border-bottom: 2px dashed darkgreen;
+    padding-top: 5px;
+}
+@media screen and (max-width: 850px) {
+    .header {
+        grid-template-columns: 1fr; /* Header su una colonna */
+        justify-items: center;
+    }
+
+    .logo {
+        grid-column: 1;
+        grid-row: 2;
+        margin: 10px 0;
+    }
+
+    .box {
+        width: 95%;
+        grid-template-columns: 1fr; /* Una sola colonna per il contenuto */
+    }
+
+    .foto, .melee {
+        grid-column: 1;
+        grid-row: auto;
+        width: 100%;
+        max-width: 250px; /* Ridimensiona l'immagine per il mobile */
+        margin: 0 auto;
+    }
+
+    .video {
+        grid-column: 1;
+        grid-row: auto;
+        aspect-ratio: 16/9; /* Mantiene le proporzioni del video */
+    }
+}
