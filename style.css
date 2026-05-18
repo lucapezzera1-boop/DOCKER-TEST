@@ -45,8 +45,6 @@ a {
     border: 2px solid black;
 }
 .foto {
-    height: 60px;
-    width: 90px;
     border: 2px solid black;
     border-radius: 10px;
     margin: 0;
@@ -172,6 +170,8 @@ a {
 }
 .foto{
     border: 2px solid black;
+    height: 100%;
+    width: 100%;
     border-radius: 10px;
     margin: 0;
     grid-column: 2;
@@ -256,7 +256,7 @@ ul{
     grid-row: 2;
 }
 .Lang .photo {
-    width: 90px;
+    width: 100px;
     height: 60px;
     object-fit: contain;
     border: none;
@@ -313,20 +313,20 @@ ul{
     flex: 1 1 0;
     width: 90px;
     height: 60px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     margin: 0;
     border-radius: 10px;
     padding: 0;
-    background-color: forestgreen;
-    color: white;
-    border: 0;
+    background-color: rgba(255,255,255,0.9);
+    color: black;
+    border: 2px solid black;
     overflow: hidden;
     cursor: pointer;
 }
 .Lang:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: transform 0.1s ease-in-out;
 }
 #current{
